@@ -13,7 +13,8 @@ var detectNetwork = function(cardNumber) {
   var cardNetworks = {
     "Diner\'s Club" : cardNumber.match(/^(3[8|9][0-9]{12})$/),
     "American Express" : cardNumber.match(/^(3[4|7][0-9]{13})$/),
-    "Visa" : cardNumber.match(/^(4[0-9]{12})$|^(4[0-9]{15})$|^(4[0-9]{18})$/)
+    "Visa" : cardNumber.match(/^(4[0-9]{12})$|^(4[0-9]{15})$|^(4[0-9]{18})$/),
+    "MasterCard" : cardNumber.match(/^(5[12345][0-9]{14})$/)
   }
 
   for (card in cardNetworks) {
