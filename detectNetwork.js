@@ -14,7 +14,9 @@ var detectNetwork = function(cardNumber) {
     "Diner\'s Club" : cardNumber.match(/^(3[8|9][0-9]{12})$/),
     "American Express" : cardNumber.match(/^(3[4|7][0-9]{13})$/),
     "Visa" : cardNumber.match(/^(4[0-9]{12})$|^(4[0-9]{15})$|^(4[0-9]{18})$/),
-    "MasterCard" : cardNumber.match(/^(5[12345][0-9]{14})$/)
+    "MasterCard" : cardNumber.match(/^(5[12345][0-9]{14})$/),
+    "Discover" : ((/^(6011)|^(65)|^(64)[4-9]/).test(cardNumber) && ((cardNumber.length === 16)||(cardNumber.length === 19))? true : null),
+    "Maestro" : cardNumber.match(/(^(5018)|^(5020)|^(5038)|^(6304)[0-9]{12,19}$)/)
   }
 
   for (card in cardNetworks) {
